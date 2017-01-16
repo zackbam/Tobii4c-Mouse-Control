@@ -22,6 +22,7 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		tobii myTobii;
-		int X, Y;
+		ofPoint gaze, previous;
 		int counter;
+		int selected;
 };

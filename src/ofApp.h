@@ -23,4 +23,5 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		tobii myTobii;
 		int X, Y;
+		int counter;
 };

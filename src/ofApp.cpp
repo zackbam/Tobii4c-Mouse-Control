@@ -5,6 +5,7 @@ void ofApp::setup(){
 	myTobii.setup();
 	X = 0;
 	Y = 0;
+	counter = 0;
 }
 
 //--------------------------------------------------------------
@@ -14,6 +15,12 @@ void ofApp::update(){
 		Y = 0.97*Y + 0.03*myTobii.eventParams.Y;
 	}
 		SetCursorPos(X , Y);
+		//printf("%f\n", ofGetFrameRate());
+		if (counter++ > (int)ofGetFrameRate()*5) {
+			mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+			mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+			counter = 0;
+		}
 }
 
 //--------------------------------------------------------------
@@ -23,7 +30,6 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
 }
 
 //--------------------------------------------------------------
